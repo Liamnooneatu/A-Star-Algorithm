@@ -1,152 +1,89 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <math.h>
+#include <iostream>
+#include <string>
 
-#define ROW 5
-#define COL 5
+#include "Grid.h"
+#include "AStar.h"
 
-typedef struct {
-    int parentX, parentY;
-    int f, g, h;
-} Cell;
+static void printGrid(const Grid& grid, Point start, Point goal, const std::vector<Point>& path) {
+    std::vector<std::vector<char>> view(grid.rows(), std::vector<char>(grid.cols(), '.'));
 
-bool isValid(int row, int col) {
-    return (row >= 0 && row < ROW && col >= 0 && col < COL);
-}
-
-bool isUnBlocked(int grid[ROW][COL], int row, int col) {
-    return grid[row][col] == 0;
-}
-
-bool isDestination(int row, int col, int dest[2]) {
-    return row == dest[0] && col == dest[1];
-}
-
-int calculateH(int row, int col, int dest[2]) {
-    return abs(row - dest[0]) + abs(col - dest[1]); // Manhattan distance
-}
-
-void tracePath(Cell cellDetails[ROW][COL], int dest[2]) {
-    int row = dest[0];
-    int col = dest[1];
-
-    printf("\nPath:\n");
-
-    while (!(cellDetails[row][col].parentX == row &&
-        cellDetails[row][col].parentY == col)) {
-        printf("(%d,%d) <- ", row, col);
-        int tempRow = cellDetails[row][col].parentX;
-        int tempCol = cellDetails[row][col].parentY;
-        row = tempRow;
-        col = tempCol;
+    for (int r = 0; r < grid.rows(); ++r) {
+        for (int c = 0; c < grid.cols(); ++c) {
+            if (grid.isBlocked(r, c)) view[r][c] = '#';
+        }
     }
 
-    printf("(%d,%d)\n", row, col);
+    for (const auto& p : path) {
+        if (p != start && p != goal) view[p.r][p.c] = '*';
+    }
+
+    view[start.r][start.c] = 'S';
+    view[goal.r][goal.c] = 'G';
+
+    for (int r = 0; r < grid.rows(); ++r) {
+        for (int c = 0; c < grid.cols(); ++c) {
+            std::cout << view[r][c] << ' ';
+        }
+        std::cout << '\n';
+    }
 }
 
-void aStar(int grid[ROW][COL], int start[2], int dest[2]) {
-    if (!isValid(start[0], start[1]) || !isValid(dest[0], dest[1])) {
-        printf("Invalid start or destination\n");
+static void printPath(const std::vector<Point>& path) {
+    if (path.empty()) {
+        std::cout << "(empty)\n";
+        return;
+    }
+    for (size_t i = 0; i < path.size(); ++i) {
+        std::cout << "(" << path[i].r << "," << path[i].c << ")";
+        if (i + 1 < path.size()) std::cout << " -> ";
+    }
+    std::cout << "\n";
+}
+
+static void runTest(const std::string& name, const Grid& grid, Point start, Point goal) {
+    std::cout << "\n=== " << name << " ===\n";
+    AStarSolver solver(/*allowDiagonal=*/false, AStarSolver::HeuristicType::Manhattan);
+
+    const auto result = solver.solve(grid, start, goal);
+
+    if (!result.found) {
+        std::cout << "No path found.\n";
+        printGrid(grid, start, goal, {});
         return;
     }
 
-    if (!isUnBlocked(grid, start[0], start[1]) ||
-        !isUnBlocked(grid, dest[0], dest[1])) {
-        printf("Start or destination blocked\n");
-        return;
-    }
+    std::cout << "Path found! Cost: " << result.totalCost << "\n";
+    std::cout << "Path: ";
+    printPath(result.path);
 
-    bool closedList[ROW][COL] = { false };
-    Cell cellDetails[ROW][COL];
-
-    for (int i = 0; i < ROW; i++) {
-        for (int j = 0; j < COL; j++) {
-            cellDetails[i][j].f = 10000;
-            cellDetails[i][j].g = 10000;
-            cellDetails[i][j].h = 10000;
-            cellDetails[i][j].parentX = -1;
-            cellDetails[i][j].parentY = -1;
-        }
-    }
-
-    int i = start[0], j = start[1];
-    cellDetails[i][j].f = 0;
-    cellDetails[i][j].g = 0;
-    cellDetails[i][j].h = 0;
-    cellDetails[i][j].parentX = i;
-    cellDetails[i][j].parentY = j;
-
-    while (true) {
-        int minF = 10000;
-        int row = -1, col = -1;
-
-        // Find lowest F cost
-        for (int r = 0; r < ROW; r++) {
-            for (int c = 0; c < COL; c++) {
-                if (!closedList[r][c] && cellDetails[r][c].f < minF) {
-                    minF = cellDetails[r][c].f;
-                    row = r;
-                    col = c;
-                }
-            }
-        }
-
-        if (row == -1) {
-            printf("No path found\n");
-            return;
-        }
-
-        closedList[row][col] = true;
-
-        int directions[4][2] = { {-1,0},{1,0},{0,-1},{0,1} };
-
-        for (int d = 0; d < 4; d++) {
-            int newRow = row + directions[d][0];
-            int newCol = col + directions[d][1];
-
-            if (isValid(newRow, newCol)) {
-                if (isDestination(newRow, newCol, dest)) {
-                    cellDetails[newRow][newCol].parentX = row;
-                    cellDetails[newRow][newCol].parentY = col;
-                    tracePath(cellDetails, dest);
-                    return;
-                }
-                else if (!closedList[newRow][newCol] &&
-                    isUnBlocked(grid, newRow, newCol)) {
-
-                    int gNew = cellDetails[row][col].g + 1;
-                    int hNew = calculateH(newRow, newCol, dest);
-                    int fNew = gNew + hNew;
-
-                    if (cellDetails[newRow][newCol].f == 10000 ||
-                        cellDetails[newRow][newCol].f > fNew) {
-
-                        cellDetails[newRow][newCol].f = fNew;
-                        cellDetails[newRow][newCol].g = gNew;
-                        cellDetails[newRow][newCol].h = hNew;
-                        cellDetails[newRow][newCol].parentX = row;
-                        cellDetails[newRow][newCol].parentY = col;
-                    }
-                }
-            }
-        }
-    }
+    std::cout << "\nGrid view:\n";
+    printGrid(grid, start, goal, result.path);
 }
 
 int main() {
-    int grid[ROW][COL] = {
+    // Test 1: Your original grid
+    Grid grid1({
         {0,0,0,0,0},
         {0,1,1,1,0},
         {0,0,0,1,0},
         {0,1,0,0,0},
         {0,0,0,0,0}
-    };
+        });
 
-    int start[2] = { 0, 0 };
-    int dest[2] = { 4, 4 };
+    runTest("Test 1: Standard path", grid1, Point{ 0,0 }, Point{ 4,4 });
 
-    aStar(grid, start, dest);
+    // Test 2: Start equals goal
+    runTest("Test 2: Start == Goal", grid1, Point{ 2,2 }, Point{ 2,2 });
+
+    // Test 3: No possible path (block a corridor)
+    Grid grid2({
+        {0,0,0,0,0},
+        {0,1,1,1,0},
+        {0,1,0,1,0},
+        {0,1,0,1,0},
+        {0,0,0,1,0}
+        });
+    runTest("Test 3: No path", grid2, Point{ 0,0 }, Point{ 4,4 });
 
     return 0;
 }
