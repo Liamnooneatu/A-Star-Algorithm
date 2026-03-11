@@ -26,6 +26,10 @@ Manhattan distance measures the distance between two points along axes at right 
 While Euclidean distance measures the straight-line distance between them.
 
 
+<img src="https://tse2.mm.bing.net/th/id/OIP.HMw2dip3CqAMSZwbK2LiZQAAAA?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="My Image" width="400">
+
+
+
 Why have i been using Manhattan and Euclidean and not something else like and RRT(Rapidly-exploring Random Tree):
 When i asked ChatGPT this is what it said "The reason someone might use Manhattan Distance or Euclidean Distance instead of something like Rapidly-exploring Random Tree (RRT) usually comes down to the type of problem being solved."
 In summary it told me that RRT would be too much and would be too overpowered for the gird finding i am using 
@@ -41,6 +45,7 @@ In summary it told me that RRT would be too much and would be too overpowered fo
 
 
 **References:** 
+https://en.wikipedia.org/wiki/Euclidean_algorithm
 https://www.youtube.com/watch?v=i0x5fj4PqP4
 https://www.youtube.com/watch?v=ySN5Wnu88nE
 https://www.geeksforgeeks.org/dsa/a-search-algorithm/
