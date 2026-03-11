@@ -18,6 +18,8 @@ Manhattan distance measures the distance between two points along axes at right 
 
 <img src="https://tse2.mm.bing.net/th/id/OIP.bXgaBczDZcXPA3qr91lsXwAAAA?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="My Image" width="400">
 
+Here is an exmaple of how this works and is used in my code
+
 
 
 
