@@ -1,18 +1,18 @@
 This is my github pages.
 
 
-heuristic path method:   
+**Heuristic path method:**
 
 It will find the path but wastes time exploring cells that are going in the wrong direction.
 With a heuristic, the algorithm has a sense of direction — it knows which cells are roughly closer to the goal and explores those first.
 
 
 
-Heuristic alternatives: Dijkstra's Algorithm, Breadth-First Search (BFS), Rapidly-exploring Random Tree (RRT).
+**Heuristic alternatives** Dijkstra's Algorithm, Breadth-First Search (BFS), Rapidly-exploring Random Tree (RRT).
 
 
 
-Manhattan:
+**Manhattan:**
 
 Manhattan distance measures the distance between two points along axes at right angles.
 
@@ -21,7 +21,7 @@ Manhattan distance measures the distance between two points along axes at right 
 
 
 
-Euclidean: 
+**Euclidean:**
 
 While Euclidean distance measures the straight-line distance between them.
 
@@ -33,14 +33,14 @@ In summary it told me that RRT would be too much and would be too overpowered fo
 **"RRT would:**
 **Produce non-optimal paths**
 **Require random sampling**
-**Be slower for simple grids**
+**Be slower for simple grids"**
 
 
 
 
 
 
-References: 
+**References:** 
 https://www.youtube.com/watch?v=i0x5fj4PqP4
 https://www.youtube.com/watch?v=ySN5Wnu88nE
 https://www.geeksforgeeks.org/dsa/a-search-algorithm/
