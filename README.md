@@ -14,7 +14,7 @@ Heuristic alternatives: Dijkstra's Algorithm, Breadth-First Search (BFS), Rapidl
 
 Manhattan:
 
-Manhattan distance measures the distance between two points along axes at right angles.
+Manhattan distance measures the distance between two points along axes at right angles. https://tse2.mm.bing.net/th/id/OIP.bXgaBczDZcXPA3qr91lsXwAAAA?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3
 
 
 
@@ -23,11 +23,24 @@ Euclidean:
 While Euclidean distance measures the straight-line distance between them.
 
 
+Why have i been using Manhattan and Euclidean and not something else like and RRT(Rapidly-exploring Random Tree):
+When i asked ChatGPT this is what it said "The reason someone might use Manhattan Distance or Euclidean Distance instead of something like Rapidly-exploring Random Tree (RRT) usually comes down to the type of problem being solved."
+In summary it told me that RRT would be too much and would be too overpowered for the gird finding i am using 
+
+**"RRT would:**
+**Produce non-optimal paths**
+**Require random sampling**
+**Be slower for simple grids**
+
+
 
 
 
 
 References: 
+https://www.youtube.com/watch?v=i0x5fj4PqP4
+https://www.youtube.com/watch?v=ySN5Wnu88nE
+https://www.geeksforgeeks.org/dsa/a-search-algorithm/
 https://chatgpt.com
 https://claude.ai
 https://en.wikipedia.org/wiki/Heuristic_(computer_science)
