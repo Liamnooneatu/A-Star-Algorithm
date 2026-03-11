@@ -14,7 +14,10 @@ Heuristic alternatives: Dijkstra's Algorithm, Breadth-First Search (BFS), Rapidl
 
 Manhattan:
 
-Manhattan distance measures the distance between two points along axes at right angles. https://tse2.mm.bing.net/th/id/OIP.bXgaBczDZcXPA3qr91lsXwAAAA?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3
+Manhattan distance measures the distance between two points along axes at right angles.
+
+<img src="https://tse2.mm.bing.net/th/id/OIP.bXgaBczDZcXPA3qr91lsXwAAAA?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="My Image" width="400">
+
 
 
 
