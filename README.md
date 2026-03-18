@@ -77,12 +77,21 @@ For my code i recieved assistance and guidance from Claude 4.5 and Chatgpt 5.0, 
 
 
 **References:** 
-https://stackoverflow.com/questions/36026464/rrt-algorithm-in-c
-https://en.wikipedia.org/wiki/Euclidean_algorithm
+
+StackOverflow: https://stackoverflow.com/questions/36026464/rrt-algorithm-in-c
+
+Wikipedia Euclidean algorithm: https://en.wikipedia.org/wiki/Euclidean_algorithm
+
 https://www.youtube.com/watch?v=i0x5fj4PqP4
+
 https://www.youtube.com/watch?v=ySN5Wnu88nE
-https://www.geeksforgeeks.org/dsa/a-search-algorithm/
-https://chatgpt.com
-https://claude.ai
-https://en.wikipedia.org/wiki/Heuristic_(computer_science)
-https://mljourney.com/manhattan-distance-vs-euclidean-distance-key-differences/
+
+Geeks for Geeks search algorithm: https://www.geeksforgeeks.org/dsa/a-search-algorithm/
+
+ChatGPT: https://chatgpt.com
+
+Claude: https://claude.ai
+
+Wikipedia Heuristic: https://en.wikipedia.org/wiki/Heuristic_(computer_science)
+
+M1 Journey: https://mljourney.com/manhattan-distance-vs-euclidean-distance-key-differences/
