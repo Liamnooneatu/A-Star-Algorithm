@@ -66,9 +66,13 @@ For my code i recieved assistance and guidance from Claude 4.5 and Chatgpt 5.0, 
 
 
 **Github Pages created using the S.T.A.R method.**
+
 **1. Situation**
+
 **2. Task**
+
 **3. Action**
+
 **4. Result**
 
 
