@@ -65,11 +65,11 @@ For my code i recieved assistance and guidance from Claude 4.5 and Chatgpt 5.0, 
 <img src="https://cdn.mos.cms.futurecdn.net/SKg6HNSWUodnkPkLAJ8fA.jpg" alt="My Image" width="400">
 
 
-Github Pages created using the S.T.A.R method.
-1. Situation
-2. Task
-3. Action
-4. Result
+**Github Pages created using the S.T.A.R method.**
+**1. Situation**
+**2. Task**
+**3. Action**
+**4. Result**
 
 
 **References:** 
