@@ -24,12 +24,14 @@ https://github.com/Liamnooneatu/A-Star-Algorithm/blob/bde480daadf8f51d7cb8b3a9aa
 
 ![My Photo](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/Screenshot%202026-03-18%20114240.png)
 
+This code has an inline function (lambada function) in C++, thta gets a small function that takes a point and return distance to the goal.
+it then measures the difference between rows and columns (dr & dc). From that we use the **Manhattan** heuristic type to get the distance.
+
 
 
 **Euclidean:**
 
 While Euclidean distance measures the straight-line distance between them.
-
 
 <img src="https://tse2.mm.bing.net/th/id/OIP.HMw2dip3CqAMSZwbK2LiZQAAAA?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="My Image" width="400">
 
