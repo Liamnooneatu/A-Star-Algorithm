@@ -57,7 +57,7 @@ In summary it told me that RRT would be too much and would be too overpowered fo
 
 
 **A.I Usage**
-For my code i recieved assistance and guidance from Claude 4.5 and Chatgpt 5.0,
+For my code i recieved assistance and guidance from Claude 4.5 and Chatgpt 5.0, i used chatgpt for research between manhatten + euclidean or a RRT which i researched online also and wanted to originally perform this as a second method to research search method differances (https://stackoverflow.com/questions/36026464/rrt-algorithm-in-c).
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/ChatGPT-Logo.png" alt="My Image" width="400">
 
@@ -72,6 +72,7 @@ Github Pages created using the S.T.A.R method.
 
 
 **References:** 
+https://stackoverflow.com/questions/36026464/rrt-algorithm-in-c
 https://en.wikipedia.org/wiki/Euclidean_algorithm
 https://www.youtube.com/watch?v=i0x5fj4PqP4
 https://www.youtube.com/watch?v=ySN5Wnu88nE
