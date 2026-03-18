@@ -17,8 +17,19 @@ Terminal output results for my three test cases:
  
 **Heuristic path method:**
 
-It will find the path but wastes time exploring cells that are going in the wrong direction.
+This is the method i used in my Astar algorithm it is easy and lightweight to run compared to other methods.
+
+Advantages: It excels in .
+
+
+Disadvantages:
+
+But falls short in larger algorithims as it will It will find the path but wastes time exploring cells that are going in the wrong direction.
 With a heuristic, the algorithm has a sense of direction — it knows which cells are roughly closer to the goal and explores those first.
+
+High Memory in larger models as data is stored in nodes and can 
+
+Overhead of Heuristic Calculation while Calculating heuristics especially complex ones adds extra sometimes uneeded computation power being used at each node.
 
 
 
