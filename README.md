@@ -90,6 +90,9 @@ For my code i recieved assistance and guidance from Claude 4.5 and Chatgpt 5.0, 
 <img src="https://cdn.mos.cms.futurecdn.net/SKg6HNSWUodnkPkLAJ8fA.jpg" alt="My Image" width="400">
 
 
+Hardcoding disatvantages 
+
+
 **Github Pages created using the S.T.A.R method.**
 
 **1. Situation**
