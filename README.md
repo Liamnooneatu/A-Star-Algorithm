@@ -1,4 +1,4 @@
-This is my github pages.
+This is my Github pages.
 
 Terminal output results for my three test cases:
 
@@ -19,10 +19,10 @@ Terminal output results for my three test cases:
 
 This is the method i used in my Astar algorithm it is easy and lightweight to run compared to other methods.
 
-Advantages: It excels in .
+Advantages: It excels in short sized testing. 
 
 
-Disadvantages:
+**Disadvantages:**
 
 But falls short in larger algorithims as it will It will find the path but wastes time exploring cells that are going in the wrong direction.
 With a heuristic, the algorithm has a sense of direction — it knows which cells are roughly closer to the goal and explores those first.
