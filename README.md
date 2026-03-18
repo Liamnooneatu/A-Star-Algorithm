@@ -22,7 +22,7 @@ Here is an exmaple of how this works and is used in my code
 
 https://github.com/Liamnooneatu/A-Star-Algorithm/blob/bde480daadf8f51d7cb8b3a9aaeee3f4c94917f9/AStar.h#L87
 
-![My Photo](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/Screenshot%202026-03-18%20114240.png)
+![My Photo]([https://github.com](https://raw.githubusercontent.com)/Liamnooneatu/A-Star-Algorithm/blob/main/Screenshot%202026-03-18%20114240.png)
 
 This code has an inline function (lambada function) in C++, thta gets a small function that takes a point and return distance to the goal.
 it then measures the difference between rows and columns (dr & dc). From that we use the **Manhattan** heuristic type to get the distance.
@@ -34,6 +34,15 @@ it then measures the difference between rows and columns (dr & dc). From that we
 While Euclidean distance measures the straight-line distance between them.
 
 <img src="https://tse2.mm.bing.net/th/id/OIP.HMw2dip3CqAMSZwbK2LiZQAAAA?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="My Image" width="400">
+
+https://github.com/Liamnooneatu/A-Star-Algorithm/blob/bde480daadf8f51d7cb8b3a9aaeee3f4c94917f9/AStar.h#L35
+
+![My Photo](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/Screenshot%202026-03-18%20115546.png)
+
+In my code i am using Euclidean for straight line detection.
+
+
+
 
 
 
