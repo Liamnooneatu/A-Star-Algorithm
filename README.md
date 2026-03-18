@@ -2,15 +2,15 @@ This is my github pages.
 
 Terminal output results for my three test cases:
 
-Test1:
+**Test1:**
 
 ![My Photo](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test1.png)
 
-Test2:
+**Test2:**
 
 ![My Photo](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test2.png)
  
-Test3:
+**Test3:**
 
  ![My Photo](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test3.png)
 
@@ -96,9 +96,9 @@ StackOverflow: https://stackoverflow.com/questions/36026464/rrt-algorithm-in-c
 
 Wikipedia Euclidean algorithm: https://en.wikipedia.org/wiki/Euclidean_algorithm
 
-https://www.youtube.com/watch?v=i0x5fj4PqP4
+Tarodev youtube video: https://www.youtube.com/watch?v=i0x5fj4PqP4
 
-https://www.youtube.com/watch?v=ySN5Wnu88nE
+Useful computerphile video: https://www.youtube.com/watch?v=ySN5Wnu88nE
 
 Geeks for Geeks search algorithm: https://www.geeksforgeeks.org/dsa/a-search-algorithm/
 
