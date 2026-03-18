@@ -20,6 +20,9 @@ Manhattan distance measures the distance between two points along axes at right 
 
 Here is an exmaple of how this works and is used in my code
 
+https://github.com/Liamnooneatu/A-Star-Algorithm/blob/bde480daadf8f51d7cb8b3a9aaeee3f4c94917f9/AStar.h#L87
+
+![My Photo](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/Screenshot%202026-03-18%20114240.png)
 
 
 
