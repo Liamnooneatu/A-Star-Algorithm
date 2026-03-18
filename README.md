@@ -1,6 +1,12 @@
 This is my github pages.
 
+Terminal output results for my three test cases:
 
+Test1: ![My Photo](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test1.png)
+
+Test2: ![My Photo](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test2.png)
+ 
+Test3: ![My Photo](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test3.png)
 **Heuristic path method:**
 
 It will find the path but wastes time exploring cells that are going in the wrong direction.
