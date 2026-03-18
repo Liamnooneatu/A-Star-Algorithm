@@ -29,6 +29,7 @@ it then measures the difference between rows and columns (dr & dc). From that we
 
 
 
+
 **Euclidean:**
 
 While Euclidean distance measures the straight-line distance between them.
@@ -57,7 +58,7 @@ In summary it told me that RRT would be too much and would be too overpowered fo
 
 
 **A.I Usage**
-For my code i recieved assistance and guidance from Claude 4.5 and Chatgpt 5.0, i used chatgpt for research between manhatten + euclidean or a RRT which i researched online also and wanted to originally perform this as a second method to research search method differances (https://stackoverflow.com/questions/36026464/rrt-algorithm-in-c).
+For my code i recieved assistance and guidance from Claude 4.5 and Chatgpt 5.0, i used chatgpt for research between manhatten + euclidean or a RRT which i researched online also and wanted to originally perform this as a second method to research search method differances (https://stackoverflow.com/questions/36026464/rrt-algorithm-in-c). I used Claude for the code which it performed in a different method compared to what we would originally use. To keep a code neat and tidy a programmer would originally keep the main could in main.cpp instead of keeping my code in the header file which is what cluade decided to do. my AStar.h is 197 lines long while my manin is only 103 lines long, this has not seemed to have caused promblems when running the code so far but it is unsightly for an outside user to read the code.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/ChatGPT-Logo.png" alt="My Image" width="400">
 
