@@ -14,6 +14,43 @@ Terminal output results for my three test cases:
 
  ![My Photo](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test3.png)
 
+Code Anaylisis:
+
+
+
+
+code
+
+
+
+
+code
+
+
+
+
+
+code
+
+
+
+
+
+code
+
+
+
+
+
+
+
+code
+
+
+
+
+
+
  
 **Heuristic path method:**
 
