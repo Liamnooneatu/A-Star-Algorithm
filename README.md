@@ -57,7 +57,7 @@ A-Star-Algorithm/
     <td align="center"><strong>Test 3 — No Path</strong></td>
   </tr>
   <tr>
-    <td><img src="https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test1.png" width="260" height="200" style="object-fit:cover;"></td>
+    <td><img src="https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test1.png" width="360" height="280" style="object-fit:cover;"></td>
     <td><img src="https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test2.png" width="260" height="200" style="object-fit:cover;"></td>
     <td><img src="https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test3.png" width="260" height="200" style="object-fit:cover;"></td>
   </tr>
