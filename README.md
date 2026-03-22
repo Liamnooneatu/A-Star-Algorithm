@@ -127,7 +127,7 @@ auto heuristic = [&](Point p) -> int {
 };
 ```
 
-[View in AStar.h — line 53](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L53)
+[View in AStar.h — line 53](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/master/AStar.h#L53)
 
 The lambda captures `goal` and `heuristicType_` from the surrounding scope — this avoids passing them as parameters on every node visit. Manhattan adds the row and column differences. Euclidean calculates the straight-line distance using Pythagoras.
 
@@ -170,7 +170,7 @@ auto cmp = [](const OpenNode& a, const OpenNode& b) {
 std::priority_queue<OpenNode, std::vector<OpenNode>, decltype(cmp)> open(cmp);
 ```
 
-[View in AStar.h — lines 61–70](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L61-L70)
+[View in AStar.h — lines 61–70](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/master/AStar.h#L61-L70)
 
 **Complexity:** `O(log n)` per push/pop — where `n` is the number of nodes in the open list.
 
@@ -202,7 +202,7 @@ path.push_back(start);
 std::reverse(path.begin(), path.end()); // reverse: goal->start becomes start->goal
 ```
 
-[View in AStar.h — lines 116–132](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L116-L132)
+[View in AStar.h — lines 116–132](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/master/AStar.h#L116-L132)
 
 **Complexity:** `O(p)` — where `p` is the length of the final path.
 
@@ -231,7 +231,7 @@ view[start.r][start.c] = 'S';
 view[goal.r][goal.c]   = 'G';
 ```
 
-[View in main.cpp — lines 7–19](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/main.cpp#L7-L19)
+[View in main.cpp — lines 7–19](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/master/main.cpp#L7-L19)
 
 ---
 
@@ -272,7 +272,7 @@ Manhattan distance measures the distance between two points along axes at right 
 
 **Disadvantages:** On larger grids it can explore cells in suboptimal directions before correcting course. Higher memory usage and per-node overhead on complex grids.
 
-[View in AStar.h — line 53](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L53)
+[View in AStar.h — line 53](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/master/AStar.h#L53)
 
 ![Manhattan code screenshot](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/Screenshot%202026-03-18%20114240.png)
 
@@ -294,7 +294,7 @@ Euclidean distance measures the true straight-line distance between two points u
 
 **Disadvantages:** Requires `sqrt()` at every node — slower than Manhattan on purely grid-based movement.
 
-[View in AStar.h — line 59](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L59)
+[View in AStar.h — line 59](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/master/AStar.h#L59)
 
 ![Euclidean code screenshot](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/Screenshot%202026-03-18%20115546.png)
 
