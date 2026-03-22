@@ -166,15 +166,19 @@ I also conducted independent research using the sources listed below.de was revi
 Hardcoding disatvantages 
 
 
-**Github Pages created using the S.T.A.R method.**
+## S.T.A.R Write-Up
 
-**1. Situation**
+### Situation
+Pathfinding is a core problem in computer science with applications in AI, robotics, and GPS navigation. I was tasked with implementing an creating an efficient grid-based pathfinding solution in C++ usinng manhatten and eucildean that could find the shortest route between two points while avoiding obstacles.
 
-**2. Task**
+### Task
+My goal was to implement the A* algorithm that could navigate a 2D grid from a start point to an end point, avoid blocked points, and be validated against distinct test configurations (3).
 
-**3. Action**
+### Action
+I implemented A* using an open list and closed list. At each step the node with the lowest `f(n) = g(n) + h(n)` is selected, where `g(n)` is the actual cost from start and `h(n)` is the heuristic estimate to goal. I implemented both Manhattan and Euclidean distance as heuristic options and designed three test grids to validate the solution.
 
-**4. Result**
+### Result
+All three test cases produced correct output. The algorithm found the shortest path in Test 1 and Test 2, and correctly reported no valid path in Test 3. The implementation is functional and demonstrates a solid understanding of heuristic search in C++.
 
 
 **References:** 
