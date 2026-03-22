@@ -74,7 +74,7 @@ auto heuristic = [&](Point p) -> int {
     return static_cast<int>(std::lround(std::sqrt(dr * dr + dc * dc)));
 };
 
-(https://github.com/Liamnooneatu/A-Star-Algorithm/blob/bde480daadf8f51d7cb8b3a9aaeee3f4c94917f9/AStar.h#L51)
+[View in AStar.h — line 53](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L51)
 viewable here via link
 
 Manhattan adds the row and column differences. Euclidean calculates the straight-line distance using Pythagoras. The lambda captures `goal` and `heuristicType_` from the surrounding scope — this avoids passing them as parameters on every node visit.
@@ -83,7 +83,7 @@ Manhattan adds the row and column differences. Euclidean calculates the straight
 
 ### Open list — priority queue
 
-A* always processes the most promising node first. This is handled by a min-heap priority queue sorted by `f` cost, with `g` cost as a tiebreaker — (https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L61-L70)
+A* always processes the most promising node first. This is handled by a min-heap priority queue sorted by `f` cost, with `g` cost as a tiebreaker. [View in AStar.h — lines 61–70](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L61-L70)
 ```cpp
 struct OpenNode {
     int f;  // total estimated cost (g + h)
@@ -102,8 +102,7 @@ std::priority_queue<OpenNode, std::vector<OpenNode>, decltype(cmp)> open(cmp);
 
 ### Path reconstruction
 
-Once the goal is reached, the path is rebuilt by walking backwards through parent pointers stored at each cell, then reversing the result so it reads start → goal.
-```cpp
+`````cpp
 Point cur = goal;
 while (cur != start) {
     path.push_back(cur);
@@ -112,12 +111,31 @@ while (cur != start) {
 path.push_back(start);
 std::reverse(path.begin(), path.end());
 Once the goal is reached, the path is rebuilt by walking backwards through parent pointers stored at each cell, then reversing the result so it reads start to the actual goal (https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L116-L132).
+`````
+REPLACE WITH:
+`````markdown
+````cpp
+Point cur = goal;
+while (cur != start) {
+    path.push_back(cur);
+    cur = info[cur.r][cur.c].parent;
+}
+path.push_back(start);
+std::reverse(path.begin(), path.end());
+````
+[View in AStar.h — lines 116–132](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L116-L132)
+`````
+
+
 
 ---
 
 ### Grid output
 
-The terminal output uses a character map to visualise the result. Free cells are `.`, walls are `#`, the path is `*`, and the start and goal are `S` and `G`.
+
+The terminal output uses a character map to visualise the result. Free cells are `.`, walls are `#`, the path is `*`, and the start and goal are `S` and `G` (https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/main.cpp#L7-L19).
+
+````markdown
 ```cpp
 if (grid.isBlocked(r, c)) view[r][c] = '#';
 for (const auto& p : path) {
@@ -125,7 +143,10 @@ for (const auto& p : path) {
 }
 view[start.r][start.c] = 'S';
 view[goal.r][goal.c]   = 'G';
-The terminal output uses a character map to visualise the result. Free cells are `.`, walls are `#`, the path is `*`, and the start and goal are `S` and `G` (https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/main.cpp#L7-L19).
+```
+[View in main.cpp — lines 7–19](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/main.cpp#L7-L19)
+````
+
 
 
 
@@ -164,7 +185,9 @@ Manhattan distance measures the distance between two points along axes at right 
 
 Here is an exmaple of how this works and is used in my code
 
-https://github.com/Liamnooneatu/A-Star-Algorithm/blob/bde480daadf8f51d7cb8b3a9aaeee3f4c94917f9/AStar.h#L87
+````markdown
+[View in AStar.h — line 53](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L53)
+````
 
 ![My Photo](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/Screenshot%202026-03-18%20114240.png)
 
@@ -180,7 +203,9 @@ While Euclidean distance measures the straight-line distance between them.
 
 <img src="https://tse2.mm.bing.net/th/id/OIP.HMw2dip3CqAMSZwbK2LiZQAAAA?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="My Image" width="400">
 
-https://github.com/Liamnooneatu/A-Star-Algorithm/blob/bde480daadf8f51d7cb8b3a9aaeee3f4c94917f9/AStar.h#L35
+````markdown
+[View in AStar.h — line 59](https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L59)
+````
 
 ![My Photo](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/Screenshot%202026-03-18%20115546.png)
 
@@ -246,22 +271,18 @@ I implemented A* using an open list and closed list. At each step the node with 
 All three test cases produced correct output. The algorithm found the shortest path in Test 1 and Test 2, and correctly reported no valid path in Test 3. The implementation is functional and demonstrates a solid understanding of heuristic search in C++.
 
 
-**References:** 
+````markdown
+## References
 
-StackOverflow: https://stackoverflow.com/questions/36026464/rrt-algorithm-in-c
+- [StackOverflow — RRT in C++](https://stackoverflow.com/questions/36026464/rrt-algorithm-in-c)
+- [Wikipedia — Euclidean Algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm)
+- [Wikipedia — Heuristic (Computer Science)](https://en.wikipedia.org/wiki/Heuristic_(computer_science))
+- [GeeksForGeeks — A* Search Algorithm](https://www.geeksforgeeks.org/dsa/a-search-algorithm/)
+- [ML Journey — Manhattan vs Euclidean Distance](https://mljourney.com/manhattan-distance-vs-euclidean-distance-key-differences/)
+- [Tarodev — A* Pathfinding (YouTube)](https://www.youtube.com/watch?v=i0x5fj4PqP4)
+- [Computerphile — A* Explained (YouTube)](https://www.youtube.com/watch?v=ySN5Wnu88nE)
+- [ChatGPT](https://chatgpt.com)
+- [Claude](https://claude.ai)
+````
 
-Wikipedia Euclidean algorithm: https://en.wikipedia.org/wiki/Euclidean_algorithm
-
-Tarodev youtube video: https://www.youtube.com/watch?v=i0x5fj4PqP4
-
-Useful computerphile video: https://www.youtube.com/watch?v=ySN5Wnu88nE
-
-Geeks for Geeks search algorithm: https://www.geeksforgeeks.org/dsa/a-search-algorithm/
-
-ChatGPT: https://chatgpt.com
-
-Claude: https://claude.ai
-
-Wikipedia Heuristic: https://en.wikipedia.org/wiki/Heuristic_(computer_science)
-
-M1 Journey: https://mljourney.com/manhattan-distance-vs-euclidean-distance-key-differences/
+---
