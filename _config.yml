@@ -4,7 +4,7 @@ url: "https://liamnooneatu.github.io"
 baseurl: "/A-Star-Algorithm"
 
 remote_theme: mmistakes/minimal-mistakes
-minimal_mistakes_skin: "dark"   # options: default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
+minimal_mistakes_skin: "neon"   # options: default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
 
 plugins:
   - jekyll-include-cache
