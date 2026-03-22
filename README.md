@@ -1,3 +1,14 @@
+---
+layout: single
+title: "A* Pathfinding Algorithm"
+toc: true
+toc_label: "Contents"
+toc_icon: "sitemap"
+---
+
+
+
+
 This is my Github pages for my A* Algorithm Project by Liam Noone.
 
 
