@@ -1,4 +1,10 @@
-This is my Github pages.
+This is my Github pages for my A* Algorithm Project by Liam Noone.
+
+
+My Project Overview:
+I was tasked with creating a project that implements the A* (A-Star) pathfinding algorithm in C++. A* is a search algorithm that finds the shortest path between two points on a grid by combining the actual cost of reaching a node with an estimated cost to the goal. 
+The implementation supports two heuristic methods — Manhattan distance and Euclidean (which we will discuss later in depth on these) distance — and was tested across three distinct grid configurations to ensure compatability against set hurdles..
+
 
 Terminal output results for my three test cases:
 
