@@ -6,6 +6,13 @@ toc_label: "Contents"
 toc_icon: "sitemap"
 ---
 
+/**
+ * @project  A* Pathfinding
+ * @author   Liam Noone
+ * @language C++
+ * @heuristics Manhattan | Euclidean
+ */
+
 This is my Github pages for my A* Algorithm Project by Liam Noone.
 
 ## Project Overview
