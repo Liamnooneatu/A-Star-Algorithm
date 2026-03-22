@@ -31,29 +31,7 @@ Terminal output results for my three test cases:
 
  ![My Photo](https://raw.githubusercontent.com/Liamnooneatu/A-Star-Algorithm/main/test3.png)
 
-Code Anaylisis:
-
-
-
-
-code
-
-
-
-
-code
-
-
-
-
-
-code
-
-
-
-
-
-code
+## Code Analysis
 
 
 
@@ -61,7 +39,94 @@ code
 
 
 
-code
+
+
+The project is split across three files: `Grid.h` defines the grid structure, `AStar.h` contains the full A* algorithm, and `main.cpp` handles test setup and output.
+
+---
+
+### Grid representation
+
+The grid is a 2D array where `0` is a free cell and `1` is a wall. The `Grid` class validates the input on construction — it rejects empty grids and grids with uneven row lengths, which prevents silent bugs during pathfinding.
+```cpp
+// 0 = free cell, 1 = blocked
+Grid grid1({
+    {0,0,0,0,0},
+    {0,1,1,1,0},
+    {0,0,0,1,0},
+    {0,1,0,0,0},
+    {0,0,0,0,0}
+});
+```
+
+---
+
+### The heuristic — lambda function
+
+The heuristic is implemented as an inline lambda inside the `solve()` function. It calculates the estimated cost from any cell to the goal using either Manhattan or Euclidean distance depending on which mode the solver was constructed with.
+```cpp
+auto heuristic = [&](Point p) -> int {
+    const int dr = std::abs(p.r - goal.r);
+    const int dc = std::abs(p.c - goal.c);
+    if (heuristicType_ == HeuristicType::Manhattan) {
+        return dr + dc;
+    }
+    return static_cast<int>(std::lround(std::sqrt(dr * dr + dc * dc)));
+};
+
+(https://github.com/Liamnooneatu/A-Star-Algorithm/blob/bde480daadf8f51d7cb8b3a9aaeee3f4c94917f9/AStar.h#L51)
+viewable here via link
+
+Manhattan adds the row and column differences. Euclidean calculates the straight-line distance using Pythagoras. The lambda captures `goal` and `heuristicType_` from the surrounding scope — this avoids passing them as parameters on every node visit.
+
+---
+
+### Open list — priority queue
+
+A* always processes the most promising node first. This is handled by a min-heap priority queue sorted by `f` cost, with `g` cost as a tiebreaker — (https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L61-L70)
+```cpp
+struct OpenNode {
+    int f;  // total estimated cost (g + h)
+    int g;  // actual cost from start
+    Point p;
+};
+
+auto cmp = [](const OpenNode& a, const OpenNode& b) {
+    if (a.f != b.f) return a.f > b.f;
+    return a.g > b.g;
+};
+std::priority_queue<OpenNode, std::vector<OpenNode>, decltype(cmp)> open(cmp);
+
+
+---
+
+### Path reconstruction
+
+Once the goal is reached, the path is rebuilt by walking backwards through parent pointers stored at each cell, then reversing the result so it reads start → goal.
+```cpp
+Point cur = goal;
+while (cur != start) {
+    path.push_back(cur);
+    cur = info[cur.r][cur.c].parent;
+}
+path.push_back(start);
+std::reverse(path.begin(), path.end());
+Once the goal is reached, the path is rebuilt by walking backwards through parent pointers stored at each cell, then reversing the result so it reads start to the actual goal (https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/AStar.h#L116-L132).
+
+---
+
+### Grid output
+
+The terminal output uses a character map to visualise the result. Free cells are `.`, walls are `#`, the path is `*`, and the start and goal are `S` and `G`.
+```cpp
+if (grid.isBlocked(r, c)) view[r][c] = '#';
+for (const auto& p : path) {
+    if (p != start && p != goal) view[p.r][p.c] = '*';
+}
+view[start.r][start.c] = 'S';
+view[goal.r][goal.c]   = 'G';
+The terminal output uses a character map to visualise the result. Free cells are `.`, walls are `#`, the path is `*`, and the start and goal are `S` and `G` (https://github.com/Liamnooneatu/A-Star-Algorithm/blob/main/main.cpp#L7-L19).
+
 
 
 
